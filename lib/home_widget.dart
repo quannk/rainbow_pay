@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'PlaceholderWidget.dart';
+import 'view/CricleAvarta.dart';
+import 'view/profile_view.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,7 +15,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     PlaceholderWidget(Colors.white),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green)
+    ProfileView(),
   ];
 
   @override
@@ -32,12 +34,12 @@ class _HomeState extends State<Home> {
             title: Text('Home'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
+            icon: Icon(Icons.notifications),
             title: Text('Notification'),
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              title: Text('Profile')
+              title: Text('User')
           )
         ],
       ),

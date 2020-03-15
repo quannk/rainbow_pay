@@ -15,38 +15,37 @@ class GiftCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return GestureDetector(
         onTap: onPressed,
         child: SizedBox(
-            width: double.infinity,
-            height: 300,
-            child: Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/galaxy.jpg"),
-                    fit: BoxFit.fitWidth,
-                    alignment: Alignment.topCenter,
+          width: double.infinity,
+          height: 300,
+          child: Container(
+            height: 250,
+            width: 170,
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: new Image.asset(
+                    'assets/images/gallery.jpg',
+                    width: size.width,
+                    height: size.height,
+                    fit: BoxFit.fill,
                   ),
                 ),
-                child: ListTile(
-                  leading: Icon(
-                    icon,
-                    color: Colors.blue,
-                  ),
-                  title: Text(
-                    text,
-                    style: TextStyle(
-                      fontFamily: 'Source Sans Pro',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                      color: Colors.white,
-                    ),
-                  ),
+                Center(
+                  child: Text("This is a Text",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28.0,
+                          color: Colors.white)),
                 ),
-              ),
-            )));
+              ],
+            ),
+          ),
+        )
+    );
   }
 }
